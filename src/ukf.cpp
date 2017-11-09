@@ -25,7 +25,12 @@ UKF::UKF() {
 
   // initial covariance matrix
   P_ = MatrixXd(DIM_X, DIM_X);
-  P_.setIdentity(DIM_X, DIM_X);
+  //P_.setIdentity(DIM_X, DIM_X);
+  P_ << 0.15, 0.0, 0.0, 0.0, 0.0,
+        0.0, 0.15, 0.0, 0.0, 0.0,
+        0.0, 0.0, 1.0, 0.0, 0.0,
+        0.0, 0.0, 0.0, 1.0, 0.0,
+        0.0, 0.0, 0.0, 0.0, 1.0;
 
   ///* predicted sigma points matrix  
   Xsig_pred_ = MatrixXd(DIM_X, DIM_SIGMA);
