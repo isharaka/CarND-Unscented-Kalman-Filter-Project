@@ -38,7 +38,6 @@ public:
   MatrixXd P_;
 
   ///* predicted sigma points matrix
-  MatrixXd Xsig_aug_;
   MatrixXd Xsig_pred_;
 
   ///* time when the state is true, in us
@@ -77,11 +76,14 @@ public:
   ///* Sigma point spreading parameter
   double lambda_;
 
+  ///* Process noise co-variance matrix
   MatrixXd Q_;
 
+  ///* Measurement noise co-variance matrices
   MatrixXd R_rad_;
   MatrixXd R_las_;
 
+  ///* NIS data
   int n_nis_laser;
   int n_high_nis_laser;
   double total_nis_laser;
